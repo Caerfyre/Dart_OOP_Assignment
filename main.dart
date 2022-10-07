@@ -5,16 +5,16 @@ void main(List<String> args) {
   List<Card> sampleDeck = <Card>[];
   DeckService deck = DeckService(sampleDeck);
   //New Deck
-  print("----------------------------");
+  print("\n----------------------------");
   print("New Deck:");
-  print("----------------------------");
+  print("----------------------------\n");
   deck.createDeck();
   deck.printCards();
 
   //Shuffled Deck
-  print("----------------------------");
+  print("\n----------------------------");
   print("Shuffled Deck:");
-  print("----------------------------");
+  print("----------------------------\n");
   deck.shuffle();
   deck.printCards();
 
@@ -22,8 +22,8 @@ void main(List<String> args) {
   List<Card> cardSuit = deck.cardWithSuit('Diamonds');
   DeckService newDeck = DeckService(cardSuit);
 
-  print("----------------------------");
+  print("\n----------------------------");
   print("Cards with Suit:");
-  print("----------------------------");
+  print("----------------------------\n");
   newDeck.printCards();
 }
