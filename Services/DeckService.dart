@@ -18,8 +18,14 @@ class DeckService {
   }
 
   void printCards(){
+    print("[");
     for(var card in deck){
-      print("${card.type} of ${card.suit}");
+      if(card != deck.last){
+        print("${card.type} of ${card.suit},");
+      }else{
+        print("${card.type} of ${card.suit}]");
+      }
+      
     }
   }
 }
