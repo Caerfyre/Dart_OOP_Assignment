@@ -1,5 +1,6 @@
 class Card {
   String type;
+  String suit;
 
-  Card(this.type);
+  Card(this.type, this.suit);
 }

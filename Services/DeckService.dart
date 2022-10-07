@@ -11,7 +11,7 @@ class DeckService {
   
     for(var suit in suits){
       for(var type in cardTypes){
-        var deckCard = Card("$type of $suit");
+        var deckCard = Card(type, suit);
         this.deck.add(deckCard);
       }
     }
@@ -21,9 +21,9 @@ class DeckService {
     print("[");
     for(var card in deck){
       if(card != deck.last){
-        print("${card.type},");
+        print("${card.type} of ${card.suit},");
       }else{
-        print("${card.type}]");
+        print("${card.type} of ${card.suit}]");
       }
       
     }
@@ -34,7 +34,7 @@ class DeckService {
   }
 
   List<Card> cardWithSuit(String suit){
-    var suitList = deck.where((item) => item.type.contains(suit));
+    var suitList = deck.where((item) => item.suit.contains(suit));
     return suitList.toList();
   }
 }

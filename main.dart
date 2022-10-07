@@ -19,7 +19,7 @@ void main(List<String> args) {
   deck.printCards();
 
   //New Deck with Suits
-  List<Card> cardSuit = deck.cardWithSuit('Hearts');
+  List<Card> cardSuit = deck.cardWithSuit('Diamonds');
   DeckService newDeck = DeckService(cardSuit);
 
   print("----------------------------");
