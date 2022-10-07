@@ -5,13 +5,13 @@ class DeckService {
 
   DeckService(this.deck);
 
-  void CreateDeck(){
-    const suits = ['Spades','Hearts', 'Diamonds', 'Clubs'];
+  void createDeck(){
+    const suits = ['Diamonds','Hearts','Clubs','Spades'];
     const cardTypes = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King",];
   
     for(var suit in suits){
       for(var type in cardTypes){
-        var deckCard = Card(type, suit);
+        var deckCard = Card("$type of $suit");
         this.deck.add(deckCard);
       }
     }
@@ -21,18 +21,20 @@ class DeckService {
     print("[");
     for(var card in deck){
       if(card != deck.last){
-        print("${card.type} of ${card.suit},");
+        print("${card.type},");
       }else{
-        print("${card.type} of ${card.suit}]");
+        print("${card.type}]");
       }
       
     }
   }
-}
 
-void main(List<String> args) {
-  List<Card> sample = <Card>[];
-  DeckService deck = DeckService(sample);
-  deck.CreateDeck();
-  deck.printCards();
+  void shuffle(){
+    deck.shuffle();
+  }
+
+  List<Card> cardWithSuit(String suit){
+    var suitList = deck.where((item) => item.type.contains(suit));
+    return suitList.toList();
+  }
 }
